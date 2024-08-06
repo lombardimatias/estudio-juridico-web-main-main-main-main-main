@@ -1,0 +1,36 @@
+<div class="container" style="margin: 100px auto">
+
+    <div class="row text-white">
+        <div class="col-6 offset-3">
+            <h4 class="text-center">Nuevo comentario</h4> <br>
+            <form action="/admin/testimonios/comentario" method="post">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Usuario" name="usuario">
+                </div>
+
+                <br>
+                <div class="form-group">
+                <textarea type="text" class="form-control" placeholder="Comentario" name="comentario"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                <textarea type="text" class="form-control" placeholder="Ubicacion" name="ubicacion"></textarea>
+                </div>
+
+                  <div class="form-group">
+                   
+
+                    
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+
+
+            </form>
+            {{#if error}}
+            <h5>{{message}}</h5>
+            {{/if}}
+        </div>
+    </div>
+
+</div>

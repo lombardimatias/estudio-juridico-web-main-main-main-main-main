@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="nav navbar-nav">
+    <a class="nav-item btn btn-outline-success text-white mx-1" href="/">Inicio</a>
+    <a class="nav-item btn btn-outline-success text-white mx-1 " href="/novedades">ir a novedades</a>
+
+  </div>
+</nav>
+
+<div class="container" style="margin: 40px auto">
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="col text-center"> <!-- Añadir "text-center" para centrar el contenido de la columna -->
+      <h4 class="text-white">¡Hola {{persona}}!</h4>
+      <br>
+      <a href="/admin/login/logout" class="btn btn-outline-danger btn-sm">Cerrar sesión
+
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- inicio fila 2-->
+
+<div class="row text-white">
+  <div class="col-5">
+    <h2>Listado de novedades</h2>
+    <br>
+  </div>
+
+  <div class="col-4 text-right">
+
+    <form class="form-inline" action="/admin/novedades" method="get">
+      <input class="form-control" type="search" placeholder="Busqueda" aria-label="search" name="q" {{#if q}}
+        value="{{q}}" {{/if}}>
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+        <i class="bi bi-search" aria-hidden="true"></i>
+      </button>
+    </form>
+
+  </div>
+
+  <div class="col-2 text-right">
+    <a href="/admin/novedades/agregar" title="Agregar novedad" class="btn btn-md btn-success">
+      <i class="bi bi-folder-plus"></i> Nuevo</a>
+  </div>
+
+
+</div> <!--fin fila 2 -->
+
+
+
+
+<!--inicio fila 3-->
+
+<div class="row">
+  <div class="col">
+    <table class="table table-dark table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Multimedia</th>
+          <th scope="col">Contenido</th>
+          <th scope="col" class="text-center">Acciones</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each novedades}}
+        <tr>
+          <th scope="row"> {{id}} </th>
+          <td>{{titulo}}</td>
+          <td>{{{video_url}}}
+            {{{imagen}}}
+
+          </td>
+          <td>{{{cuerpo}}}</td>
+
+          <td class="text-center">
+            <a href="/admin/novedades/modificar/{{id}}" title="Modificar"
+              class="btn btn-sm btn-outline-primary  btn-espaciado">
+              <i class="bi bi-pencil"></i></a>
+
+            <a href="/admin/novedades/eliminar/{{id}}" title="Eliminar"
+              class="btn btn-sm btn-outline-danger  btn-espaciado">
+              <i class="bi bi-trash2"></i></a>
+
+
+            </a>
+
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+    {{#if is_search}}
+    {{#unless novedades.length}}
+    <p class="text-white" align="center"> No se encontraron resultados para "<b>{{q}}</b>" </p>
+    {{/unless}}
+    {{/if}}
+  </div>
+</div>
+<!--fin fila 3-->

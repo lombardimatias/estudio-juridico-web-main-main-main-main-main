@@ -1,0 +1,55 @@
+<!-- Creamos la vista views/admin/modificar.hbs donde armaremos el formulario para
+modificar. Este es muy similar al de agregar, con la salvedad de que los valores de
+los campos vienen predefinidos por los campos de la novedad que trajimos de la
+base de datos.
+Además agregamos un campo oculto que utilizaremos en el envio del formulario
+para saber qué novedad debemos modificar-->
+
+
+<div class="container" style="margin: 100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4 class="text-center">Modificar una novedad</h4> <br>
+            <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{novedad.id}}" name="id">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Titulo" value="{{novedad.titulo}}"
+                        name="titulo" style="margin-bottom: 20px;">
+                </div>
+                <br>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" placeholder="Subtitulo"
+                        name="subtitulo">{{novedad.subtitulo}}</textarea>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <label> Imagen: <input type="file" name="imagen" id="imagen" /></label>
+                    </p>
+                    <p>
+                        <label><input type="checkbox" name="img_delete" id="img_delete" value="1" />Eliminar imagen
+                            actual?</label>
+                        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                    </p>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <label> Video: <input type="file" name="video" id="video" /></label>
+                    </p>
+                    <p>
+                        <label><input type="checkbox" name="video_delete" id="video_delete" value="1" />Eliminar video
+                            actual?</label>
+                        <input type="hidden" name="video_original" value="{{novedad.video_url}}">
+                    </p>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" placeholder="Cuerpo" name="cuerpo">{{novedad.cuerpo}}</textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" style="margin-left: 400px;">Modificar</button>
+            </form>
+            {{#if error}}
+            <h5>{{message}}</h5>
+            {{/if}}
+        </div>
+    </div>
+</div>

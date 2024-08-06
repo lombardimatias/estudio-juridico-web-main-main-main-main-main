@@ -1,0 +1,1086 @@
+/***********************general*******************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: black;
+}
+
+/*colores fondo para el body*/
+
+.background-black {
+    background-color: black;
+}
+
+.background-oro {
+    background-color: #a07e28;
+    ;
+}
+
+.background-white {
+    background-color: whitesmoke;
+}
+
+/*******************************************/
+/*******************Cierre general****************/
+/*************************************************/
+
+
+/************************layout.hbs***************/
+
+/*barra de navegación */
+#inicio {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+/* Fijar el header en la parte superior */
+#inicio header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    /* Asegúrate de que el fondo sea visible y contraste con el contenido */
+    z-index: 1000;
+    /* Asegúrate de que el header esté por encima de otros elementos */
+    border-bottom: 2px solid white;
+}
+
+/* Ajusta el padding-top del contenido principal para evitar que quede oculto debajo del header */
+#inicio {
+    padding-top: 70px;
+    /* Ajusta este valor según la altura del header */
+}
+
+#inicio header .contenido-header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+
+
+}
+
+#inicio header .contenido-header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#inicio header .contenido-header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+#inicio header .contenido-header .logo {
+    color: #a07e28;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#inicio header .contenido-header .logo h3 {
+    height: 40px;
+}
+
+#inicio header .contenido-header nav ul li {
+    text-align: center;
+}
+
+#inicio header .contenido-header nav ul li i {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#inicio header .contenido-header nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #a8a8a8;
+    margin: 0px 20px;
+}
+
+#inicio header .contenido-header nav ul li:hover i {
+    color: #a07e28;
+}
+
+#inicio header .contenido-header .social a {
+    display: inline-block;
+    background-color: #a07e28;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+#inicio header .contenido-header .social > i {
+    display: inline-block;
+    color: #a8a8a8;
+    margin-left: 10px;
+}
+
+
+#inicio header .contenido-header .social img {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 2px;
+    
+
+}
+
+
+
+
+.nav-responsive {
+    display: none;
+    font-size: 25px;
+    color: #a8a8a8;
+}
+
+/*Cierra barra de navegacion*/
+/**********/
+
+
+/*footer*/
+.seccion-oscura {
+    background-color: #1d1b1b;
+    color: white;
+
+
+}
+
+
+
+.iconos-redes-sociales a {
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+
+    background-color: #a07e28;
+    border: 2px solid black;
+}
+
+.iconos-redes-sociales a:hover i {
+    color: black;
+
+}
+
+.twitter-x-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 4px;
+    transition: all 0.2s ease-in;
+    
+}
+
+a:hover .twitter-x-icon path {
+    fill: black; /* Cambia el color al hacer hover */
+}
+
+/* Estilo adicional para el SVG y sus paths */
+.twitter-x-icon path {
+    fill: white; /* Color inicial */
+}
+
+.derechos-de-autor {
+    font-size: 15px;
+    color: #aeaeae;
+    padding: 20px;
+}
+
+/*cierra footer*/
+/**********/
+
+/****************************Cierra layout.hbs*****************/
+/**************************************************************/
+
+
+/*****************************index.hbs************************/
+/*carousel */
+
+
+
+.info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    color: #fff;
+}
+
+.info h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+}
+
+.info button {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 20px;
+    border: none;
+    background-color: #a07e28;
+    color: black;
+    padding: 7px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.info button:hover {
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.custom-carousel {
+    height: auto;
+    overflow: hidden;
+    /* Asegura que no se muestren partes de la imagen que sobresalgan */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Asegúrate de que la imagen cubra el contenedor */
+}
+
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 700px) {
+    .info {
+        width: 90%;
+        /* Ajusta el ancho para pantallas pequeñas */
+        top: 60%;
+        /* Ajusta la posición vertical */
+    }
+
+    .custom-carousel-margin {
+        margin-top: 80px;
+        /* Ajusta este valor según tus necesidades */
+    }
+
+
+    .info h2 {
+        font-size: 20px;
+        /* Ajusta el tamaño de la fuente */
+        margin-bottom: 10px;
+        /* Ajusta el margen inferior */
+    }
+
+    .info p {
+        font-size: 14px;
+        /* Ajusta el tamaño de la fuente */
+    }
+
+    .info button {
+        padding: 5px 15px;
+        /* Ajusta el tamaño del botón */
+        font-size: 9px;
+        /* Ajusta el tamaño de la fuente */
+        margin-bottom: 25px;
+    }
+}
+
+/*Cierra carousel */
+/**********/
+
+
+/*seccion sedes*/
+
+.titulo-mapa {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #a07e28;
+    text-align: center;
+    padding: 4px;
+    /* Ajusta el relleno según sea necesario */
+
+
+}
+
+.subtitulo-mapa {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #a07e28;
+    padding: 5px;
+    /*Ajusta el relleno según sea necesario */
+    font-size: 15px;
+}
+
+.subtitulo-mapa i {
+    margin-right: 8px;
+    /* Espacio entre el icono y el texto */
+
+}
+
+.subtitulo-mapa span {
+    margin-right: 20px;
+    /* Espacio entre los diferentes elementos de contacto */
+}
+
+
+.mapa iframe {
+    width: 100%;
+    height: 360px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll_section {
+    scroll-margin-top: 95px;
+}
+
+/*Cierre sedes*/
+/**********/
+
+/***********************************Cierra index.hbs********************/
+/***********************************************************************/
+
+
+/****************************Sección RESPONSIVE  menú hamburguesa********/
+
+
+@media screen and (max-width:1070px) {
+    #inicio header .contenido-header .social {
+        display: none;
+    }
+
+    #inicio header .contenido-header nav {
+        position: static;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width:700px) {
+    .fila {
+        display: block;
+    }
+
+    .fila {
+        display: block;
+        width: 100%;
+    }
+
+    .fila .item {
+        width: 100%;
+    }
+
+    #inicio header .contenido-header nav {
+        position: initial;
+        display: none;
+        transform: translate(0);
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+
+    #inicio header .contenido-header {
+        padding: 20px;
+    }
+
+    #inicio header .contenido-header nav.responsive {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        z-index: 99;
+    }
+
+    nav.responsive ul {
+        display: block !important;
+    }
+
+    nav.responsive ul li {
+        border-bottom: 1px solid #a07e28;
+        padding: 10px 0;
+    }
+
+    #contacto .fila {
+        display: block;
+        text-align: center;
+    }
+
+    #contacto .fila h3 {
+        margin: 20px 0 3px 0;
+    }
+
+    #contacto .fila .media {
+        display: block;
+    }
+
+    #contacto .fila input {
+        width: 90%;
+    }
+
+    .carousel-item img {
+        height: auto;
+        /* Permite que la altura de la imagen se ajuste automáticamente */
+    }
+
+}
+
+/****************************Cierra Seccion RESPONSIVE***************************/
+/**********/
+
+
+/*******************************Animaciones*************************************/
+@keyframes anima-izquierda {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación desde la derecha */
+@keyframes anima-derecha {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes hacia-arriba {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes hacia-abajo {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.izq2der {
+    animation: anima-izquierda 2s forwards;
+}
+
+.der2izq {
+    animation: anima-derecha 2s forwards;
+}
+
+.aba2arr {
+    animation: hacia-arriba 2s forwards;
+}
+
+.arr2aba {
+    animation: hacia-abajo 2s forwards;
+}
+
+/*********************************Cierre animaciones**********************/
+
+/********************************nosotros.hbs************************************/
+/*sección nosotros*/
+
+.historia-seccion,
+.valores-seccion,
+.principios-seccion {
+    margin: 20px;
+    padding: 20px;
+    background-color: #a07e28;
+    /* Fondo más claro para una mejor legibilidad */
+    border-radius: 8px;
+    border: 3px solid whitesmoke;
+    /* Borde sutil para definir el área */
+    background-image: url(../images/fondonosotros2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.valores-seccion {
+    background-image: url(../images/fondonosotros1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.principios-seccion {
+    background-image: url(../images/fondonosotros3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.titulo-historia {
+    font-size: 24px;
+    color: whitesmoke;
+    /* Gris oscuro para el texto */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    /* Línea debajo del título para destacar */
+    padding-bottom: 5px;
+}
+
+.parrafo-historia {
+    font-size: 16px;
+    color: whitesmoke;
+    /* Gris más claro para el texto */
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.lista-principios {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+/*cierra seccion nosotros*/
+/****************************Cierra nosotros.hbs*************************/
+/***********/
+
+
+/************************Servicios.hbs*********************************/
+
+.my-custom-btn {
+
+    height: 5px;
+    margin-top: 17px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 60px;
+    height: 30px;
+    width: 130px;
+    font-family: sans-serif;
+    letter-spacing: .1em;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    border-color: #a07e28;
+
+}
+
+.my-custom-btn:hover {
+    background-color: black;
+    border-color: white;
+    color: white;
+    /* Cambia el color del borde al pasar el ratón */
+}
+
+.planes {
+    margin-bottom: 100px;
+}
+
+
+.tabla a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: black;
+
+}
+
+.tabla {
+    width: 33%;
+    min-height: 180px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px 0px black;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* Añade esta línea */
+    transition: .5s all;
+}
+
+.tabla:hover {
+    background-color: #a07e28;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.tabla h2:hover {
+    color: black;
+}
+
+.tabla .icono:hover {
+    color: black;
+}
+
+
+.tabla h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: white;
+}
+
+.icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .tabla {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .tabla {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+.custom-modal-body {
+    background-color: white;
+}
+
+.custom-modal-body p {
+    font-family: 'Roboto', 'sans seriff';
+}
+
+
+.modal-body-custom {
+    background-color: black;
+}
+
+.modal-body-custom p {
+    font-family: 'Roboto', 'sans seriff';
+}
+
+/***********************Cierre servicios.hbs***************/
+/***********************************************************/
+
+
+
+/*****************Novedades.hbs************/
+.seccion-pagina h1 {
+    color: #C9961A;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    background-color: #1f3144;
+    margin-bottom: 30px;
+}
+
+.producto {
+    position: relative;
+    /* Necesario para que el video se posicione correctamente */
+    background-color: #C9961A;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    /* Para asegurarse de que el contenido no se desborde */
+}
+
+.producto video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Asegura que el video cubra completamente el contenedor */
+    z-index: 0;
+    /* Coloca el video detrás del contenido */
+}
+
+.producto .contenido {
+    position: relative;
+    z-index: 1;
+    /* Coloca el contenido sobre el video */
+    color: #fff;
+    /* Asegura que el texto sea visible sobre el video */
+}
+
+
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto h2,
+.producto p,
+.producto button {
+    margin-top: 10px;
+    /* Reducido el margen superior */
+}
+
+.producto button {
+    padding: 10px 20px;
+    /* Ajustado el padding para un aspecto más compacto */
+    border-radius: 10px;
+    background-color: #C9961A;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.modal-content {
+    background-color: black;
+    /* Fondo negro para el contenido del modal */
+    color: white;
+    /* Asegura que el texto sea blanco para visibilidad */
+}
+
+.modal-dialog {
+    background-color: black;
+    /* Fondo negro para el diálogo del modal */
+    box-shadow: 0 6px 20px rgba(187, 181, 181, 0.993);
+
+
+}
+
+/********************Cierre novedades.hbs*******************************/
+
+
+/**************************contacto.hbs formulario**********************/
+
+/* *** Hero contacto *** */
+.hero-contacto .titulo-h1 {
+
+    color: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* *** Hero contacto *** */
+.hero-contacto .titulo-h4 {
+
+    color: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.hero-contacto::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    background-image: url(../images/estudio-form.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+
+
+/* *** form generalidades *** */
+
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+
+.saludo {
+    padding: 30px 0px 20px 0px;
+}
+
+.form-col {
+    width: 40%;
+}
+
+input {
+    border: 1px dotted #1c1919;
+    border-radius: 5px;
+    height: 50px;
+    width: 50%;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.input-2-col {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
+}
+
+@media (max-width:1140px) {
+
+    .enviar:first-child {
+        margin-bottom: 0;
+    }
+
+    .input-2-col {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .form-col {
+        width: 50%;
+    }
+
+}
+
+
+@media (max-width:900px) {
+
+    .form-col {
+        width: 80%;
+    }
+
+
+}
+
+
+@media (max-width:600px) {
+
+
+
+    .hero-contacto::after {
+        height: 135vh;
+    }
+
+
+}
+
+/* *** SELECT *** */
+
+.select_tc {
+    padding: 25px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    height: 150px;
+
+}
+
+.tipo_consulta {
+    width: 250px;
+    height: 100px;
+    font-size: 1.2rem;
+
+}
+
+@media (max-width:600px) {
+    .select_tc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 22%;
+        gap: 10px;
+
+    }
+}
+
+/* *** carga de archivo *** */
+
+input[type=file] {
+    width: 100%;
+}
+
+
+
+.upload_file {
+    margin-bottom: 0px;
+}
+
+.upload_file p,
+.upload_file input {
+    padding: 10px 10px;
+}
+
+/* *** TextArea *** */
+
+textarea::placeholder,
+input::placeholder {
+    font-family: var(--font-main);
+    font-size: 1.2em
+}
+
+textarea {
+    border: 1px dotted #1c1919;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    height: 150px;
+    resize: none;
+}
+
+/* *** Boton enviar *** */
+
+.enviar {
+    margin: 30px 160px;
+    width: 25%;
+    height: 50px;
+    background-color: black;
+    font-size: 1.1em;
+    color: #fff;
+    cursor: default;
+    transition: 1s ease all;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.enviar:hover {
+    background-color: #a07e28;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* *** Mensajes enviado/error *** */
+
+#enviado {
+    color: black;
+    font-size: 1.2rem;
+    margin: 5px 0 20px 0;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    background-color: #e2f1f8;
+}
+
+#error-carga {
+    color: #fcfcfc;
+    font-size: 1.2rem;
+    margin: 5px 0 20px 0;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+/************************Cierre contacto.hbs formulario**********************/
+/***************************************************************************/
+
+
+/****************************admin novedades.hbs***************************/
+
+.form-inline .form-control {
+
+    margin-right: 5px;
+    /* Espacio entre el input y el botón */
+}
+
+.form-inline .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0.375rem 0.75rem;
+    /* Ajusta el padding según sea necesario */
+    background-color: black;
+}
+
+.form-inline .btn i {
+    font-size: 1.25rem;
+    /* Ajusta el tamaño del icono según sea necesario */
+}
+
+
+.btn-espaciado {
+    margin-bottom: 8px;
+    /* Puedes ajustar el valor según la separación que desees */
+}
+
+
+
+
+/**********************Cierre admin novedades.hbs***************************/
+
+/******************************************************/

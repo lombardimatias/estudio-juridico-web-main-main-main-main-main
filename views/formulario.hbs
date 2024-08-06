@@ -1,0 +1,35 @@
+<div class="container" style="margin: 100px auto">
+    <div class="row text-white">
+        <div class="col-6 offset-3">
+            <h4 class="text-center">Agendar un turno</h4> <br>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nombre" name="name" id="name" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email@" name="email" id="email" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="date" class="form-control" placeholder="Turno" name="date" id="date" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <select class="form-control" name="reason" id="reason" required>
+                        <option value="" disabled selected>Motivo de la consulta</option>
+                        <option value="Derecho de familia">Derecho de familia</option>
+                        <option value="Derecho penal">Derecho penal</option>
+                        <option value="Divorcios">Divorcios</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Mensaje" name="message" id="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar solicitud </button>
+            </form>
+        </div>
+    </div>
+</div>
+
